@@ -13,6 +13,24 @@ class registerForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         
+        self.fields['username'].widget.attrs.update({
+             'class':'form-control'
+        })
+        self.fields['first_name'].widget.attrs.update({
+                    'class':'form-control'
+                })
+        self.fields['last_name'].widget.attrs.update({
+             'class':'form-control'
+        })
+        self.fields['email'].widget.attrs.update({
+             'class':'form-control'
+        })
+        self.fields['password1'].widget.attrs.update({
+             'class':'form-control'
+        })
+        self.fields['password2'].widget.attrs.update({
+             'class':'form-control'
+        })
 
         for field in self.fields.values():
             field.help_text = None
