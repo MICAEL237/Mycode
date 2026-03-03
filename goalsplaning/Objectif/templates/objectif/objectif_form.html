@@ -1,0 +1,16 @@
+{% extends 'objectif/base.html '%}
+
+{% block title %} Formulaire {% endblock %}
+
+{% block content %}
+    <div class="vw-50 mx-auto mt-1  text-center text-dark  mb-4">
+                <h2>Creer un objectif</h2>
+    </div>
+         <form  method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-outline-primary  w-100 " value="Valider">
+        </form>
+    
+
+{% endblock %}

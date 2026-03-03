@@ -5,4 +5,7 @@ from .views import *
 urlpatterns= [
     path('', RegisterViews.as_view(), name='register'),
     path('login', loginViewForm.as_view(), name='login'),
+    path('deatail/<int:pk>/<str:section>/', UserDetailView.as_view(), name='listgoal'),
+
+
 ]

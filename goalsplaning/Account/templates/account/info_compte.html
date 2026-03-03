@@ -1,0 +1,15 @@
+{% extends 'account/base.html' %}
+
+{% block title %} Mes infos {% endblock %}
+
+{% block content %}
+
+    <h2> Infos du compte </h2>
+    <ul class="list-group">
+        <li class="list-item"><p>Username: <strong>{{ user.username }}</strong></p></li>
+        <li class="list-item"><p>FirstName: <strong>{{ user.first_name }}</strong></p></li>
+        <li class="list-item"><p>LastName: <strong>{{ user.last_name }}</strong></p></li>
+        <li class="list-item"><p>Email: <strong>{{ user.email }}</strong></p></li>
+        <li class="list-item"><p>Password: <strong>{{ user.password }}</strong></p></li>
+    </ul>
+{% endblock %}

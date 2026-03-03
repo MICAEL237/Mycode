@@ -1,0 +1,47 @@
+{% extends 'account/base.html '%}
+
+{% block title %} Formulaire {% endblock %}
+
+{% block content %}
+
+    <table border="3"  class="table m-100 table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Debut</th>
+                <th>Fin</th>
+                <th>Etat</th>
+                <!-- <th>Duree</th>--> 
+                <th>Action</th>
+            </tr>
+            <tbody>
+                 {% for ojt in Objectifs %}
+                    <tr>
+                        <td><p> {{ ojt.titre }} </p></td>
+                        <td><p> {{ ojt.description }} </p></td>
+                        <td><p> {{ ojt.date_debut }} </p></td>
+                        <td><p> {{ ojt.date_fin }} </p></td>
+                        
+                        <!-- <td><p> {{ duree }} </p></td>--> 
+                        <td><p> {{ ojt.etat }} </p></td>
+                        <td>
+                           
+                                <select name="" id="" class="form-select">
+                                    <option value=""><a class="nav-link" href="{% url 'updategoals' ojt.pk %}">Modifier</a></option>
+                                    <option value=""><a class="nav-link" href="{% url 'updatetat' ojt.pk %}">Modifier l'etat</a></option>
+                                    <option value=""><a class="nav-link" href="{% url 'deletegoals' ojt.pk %}">Supprimer</a></option>
+                                </select>
+                       
+                        </td>
+                    </tr>
+                    
+                 {% endfor %}
+            </tbody>
+        </thead>
+    </table>
+   
+
+    
+
+{% endblock %}

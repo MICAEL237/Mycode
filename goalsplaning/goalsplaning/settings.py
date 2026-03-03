@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-@_1quper-wkk+-bhjp-3vwi8u_i4&evhp-5ij(l&_wg)o0sx+b
 DEBUG = True
 
 ALLOWED_HOSTS = []
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'objectif/create/'
 
 
 # Application definition
@@ -37,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Account'
+    'Account',
+    'Objectif'
 ]
 
 MIDDLEWARE = [
