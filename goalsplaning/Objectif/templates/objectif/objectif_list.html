@@ -14,6 +14,7 @@
                 <th>Etat</th>
                 <!-- <th>Duree</th>--> 
                 <th>Action</th>
+                <th>Echeances</th>
             </tr>
             <tbody>
                  {% for ojt in Objectifs %}
@@ -25,6 +26,7 @@
                         
                         <!-- <td><p> {{ duree }} </p></td>--> 
                         <td><p> {{ ojt.etat }} </p></td>
+                       
                         <td>
                            
                                 <select name="" id="" class="form-select">
@@ -34,6 +36,7 @@
                                 </select>
                        
                         </td>
+                         <td><p> {{ echeance }} </p></td>
                     </tr>
                     
                  {% endfor %}

@@ -44,15 +44,15 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         etat = ''
         for obj in valeur:
             if obj < today : # date passee
-                etat = 'Terminer'
+                echeance = "Fin d'echeance"
             else: #date futur
-                etat = 'En cours'
+                echeance = 'Echeance  cours'
         
 
         if section == 'objectif':
             
             context['Objectifs'] = Objectif
-            context['etat'] = etat
+            context['echeance'] = echeance
         
 
     
