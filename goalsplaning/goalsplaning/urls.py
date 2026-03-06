@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('Account.urls')),
     path('objectif/', include('Objectif.urls')),
     path('taches/', include('Taches.urls')),
+    path('session/', include('Session.urls'))
 
 ]

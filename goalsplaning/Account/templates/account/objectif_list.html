@@ -1,4 +1,4 @@
-{% extends 'objectif/base1.html '%}
+{% extends 'account/base.html '%}
 
 {% block title %} Formulaire {% endblock %}
 
@@ -8,33 +8,35 @@
         <thead class="table-dark">
             <tr>
                 <th>Titre</th>
+                <th>Description</th>
                 <th>Debut</th>
                 <th>Fin</th>
-                <th>Status</th>
+                <th>Etat</th>
                 <!-- <th>Duree</th>--> 
                 <th>Action</th>
                 <th>Echeances</th>
             </tr>
             <tbody>
-                 {% for ojt in taches %}
+                 {% for ojt in Objectifs %}
                     <tr>
                         <td><p> {{ ojt.titre }} </p></td>
+                        <td><p> {{ ojt.description }} </p></td>
                         <td><p> {{ ojt.date_debut }} </p></td>
                         <td><p> {{ ojt.date_fin }} </p></td>
                         
                         <!-- <td><p> {{ duree }} </p></td>--> 
-                        <td><p> {{ ojt.status }} </p></td>
+                        <td><p> {{ ojt.etat }} </p></td>
                        
                         <td>
                            
-                                <select name="" id="" class="form-select">
-                                    <option value=""><a class="nav-link" href="{% url 'updategoals' ojt.pk %}">Modifier</a></option>
-                                    <option value=""><a class="nav-link" href="{% url 'updatetat' ojt.pk %}">Modifier l'etat</a></option>
-                                    <option value=""><a class="nav-link" href="{% url 'deletegoals' ojt.pk %}">Supprimer</a></option>
-                                </select>
+                                <div>
+                                    <a class="nav-link" href="{% url 'updategoals' ojt.pk %}">Modifier</a>
+                                    <a class="nav-link" href="{% url 'updatetat' ojt.pk %}">Modifier l'etat</a>
+                                    <a class="nav-link" href="{% url 'deletegoals' ojt.pk %}">Supprimer</a>
+                                </div>
                        
                         </td>
-                         <td><p><a class="btn btn-outline-success" href="{% url 'lissession' ojt.pk %}">Session</a></p></td>
+                         <td><p> {{ echeance }} </p></td>
                     </tr>
                     
                  {% endfor %}

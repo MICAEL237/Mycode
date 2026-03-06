@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.core.exceptions import PermissionDenied
 from .models import Tasks
 from .forms import *
+from Session.models import Sessions
 # Create your views here.
 
 
@@ -41,3 +42,18 @@ class StatusUpdateView(UpdateView):
 class TaskDeleteView(DeleteView):
     model = Tasks
     success_url = reverse_lazy('createtache')
+
+class TaskDeatilView(DetailView):
+    model = Tasks
+    template_name = 'taches/taches_session.html'
+    context_object_name = 'tache'
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        tache = self.get_object()
+        sessions = Sessions.objects.filter(tache = tache)
+
+        context['sessions'] = sessions
+
+        return context

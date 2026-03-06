@@ -16,7 +16,7 @@
                 <th>Echeances</th>
             </tr>
             <tbody>
-                 {% for ojt in taches %}
+                 {% for ojt in taches_terminer %}
                     <tr>
                         <td><p> {{ ojt.titre }} </p></td>
                         <td><p> {{ ojt.date_debut }} </p></td>
@@ -34,7 +34,6 @@
                                 </select>
                        
                         </td>
-                         <td><p><a class="btn btn-outline-success" href="{% url 'lissession' ojt.pk %}">Session</a></p></td>
                     </tr>
                     
                  {% endfor %}

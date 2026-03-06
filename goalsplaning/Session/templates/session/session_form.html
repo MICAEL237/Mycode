@@ -1,0 +1,14 @@
+{% extends 'taches/base.html' %}
+
+{% block title %} formulaire {% endblock %}
+
+{% block content %} 
+
+    <form action="" method="post">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-outline-success w-100">Valider</button>
+
+    </form>
+{% endblock %}

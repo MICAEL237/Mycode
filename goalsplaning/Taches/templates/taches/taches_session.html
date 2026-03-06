@@ -7,14 +7,16 @@
     <table border="3"  class="table m-100 table-bordered table-striped table-hover">
         <thead class="table-dark">
             <tr>
-                <th>Titre</th>
-                <th>Liste des taches</th>
+                <th>Tache</th>
+                <th>Heure_debut</th>
+                <th>Heure_debut</th>
             </tr>
             <tbody>
-                 {% for ojt in goals %}
+                 {% for ojt in sessions %}
                     <tr>
-                        <td><p> {{ ojt.titre }} </p></td>
-                        <td><p> <a class="nav-link btn btn-outline.primary" href="{% url 'taches' ojt.pk  'taches' %}"> voir Mes Taches</a></p></td>
+                        <td><p> {{ ojt.tache }} </p></td>
+                        <td><p> {{ ojt.heure_debut }} </p></td>
+                        <td><p> {{ ojt.heure_fin }} </p></td>
                         
                     </tr>
                     

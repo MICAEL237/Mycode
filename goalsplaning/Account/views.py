@@ -62,7 +62,7 @@ class UserDetailView(LoginRequiredMixin, DetailView):
         section =  self.kwargs.get('section')
 
         if section == 'objectif':
-            return ['objectif/objectif_list.html']
+            return ['account/objectif_list.html']
         else:
             return ['account/info_compte.html']
 
